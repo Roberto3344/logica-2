@@ -1,0 +1,26 @@
+<canvas id="tela" width="600" height="400"></canvas>
+<script>
+var tela = document.getElementById("tela");
+var c = tela.getContext("2d");
+
+var img = new Image();
+img.src = "bluegriffon128.png";
+
+var DImagem = function(x,y) {
+    c.drawImage(img, x, y);
+};
+
+var limpaTela = function() {
+    c.clearRect(0,0,600,400);
+};
+var x = 1;
+
+var mostraImagem = function() {
+
+    limpaTela();
+    DImagem(x,150);
+    x = x + 1;
+};
+setInterval(mostraImagem,2);
+
+</script>
